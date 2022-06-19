@@ -1,15 +1,14 @@
-const fetchData = async (api) => {
+const fetchData = async () => {
   try {
-    const res = await fetch(api);
+    const res = await fetch("https://api.tvmaze.com/shows/82");
 
     const data = await res.json();
     return data;
   } catch (err) {
-    console.error(err);
+     return null;
   }
 };
 
- const api = "https://api.tvmaze.com/shows/82/episodes";
 
- console.log(fetchData(api));
-// module.exports = fetchData;
+
+module.exports = fetchData;
